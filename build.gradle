@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+mainClassName = "com.hascode.tutorial.HeimdallExamples"
+
+sourceCompatibility = 1.8
+version = '1.0.0'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'hasCode.com Heimdall Encryption Tutorial', 'Implementation-Version': version
+    }
+}
+
+repositories {
+	mavenCentral()
+    maven {
+        url 'https://raw.githubusercontent.com/qaware/heimdall/master/repository/'
+    }
+}
+
+dependencies {
+    compile 'de.qaware:heimdall:1.2'
+    compile 'com.google.guava:guava:18.0'
+}
